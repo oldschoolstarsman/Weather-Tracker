@@ -1,0 +1,24 @@
+.search {
+  text-align: center;
+}
+
+.form {
+  width: 20%;
+  border: solid 1px #a9a9a9;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  padding: 3px;
+  margin: 0 auto 2rem auto;
+  display: block;
+  background-color: transparent;
+
+  &::placeholder {
+    color: black;
+  }
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.2s 0.2s ease; 
+  opacity: 0;
+}
