@@ -8,7 +8,11 @@ const Min = ({ tempMin }) => (
 
 
 Min.propTypes = {
-  tempMin: PropTypes.number.isRequired,
+  tempMin: PropTypes.number,
+};
+
+Min.defaultProps = {
+  tempMin: '',
 };
 
 

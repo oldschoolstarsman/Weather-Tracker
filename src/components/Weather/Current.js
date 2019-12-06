@@ -16,7 +16,11 @@ const Current = ({ city, tempCurrent, weatherNow }) => (
 Current.propTypes = {
   city: PropTypes.string.isRequired,
   weatherNow: PropTypes.string.isRequired,
-  tempCurrent: PropTypes.number.isRequired,
+  tempCurrent: PropTypes.number,
+};
+
+Current.defaultProps = {
+  tempCurrent: '',
 };
 
 export default Current;

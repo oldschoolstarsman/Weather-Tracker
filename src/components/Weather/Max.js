@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-const Night = ({ tempMax }) => (
+const Max = ({ tempMax }) => (
   <div>Max temperature: {tempMax}&deg; </div>
 );
 
-Night.propTypes = {
-  tempMax: PropTypes.number.isRequired,
+Max.propTypes = {
+  tempMax: PropTypes.number,
 };
 
-export default Night;
+Max.defaultProps = {
+  tempMax: '',
+};
+
+export default Max;

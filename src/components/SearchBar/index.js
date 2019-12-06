@@ -14,10 +14,11 @@ const SearchBar = (props) => {
   };
 
   const { loadStats, inputValue } = props;
+
   return (
     <div className="search">
       <p>Enter a city of your choice</p>
-      <form onSubmit={loadStats}>
+      <form onSubmit={loadStats} >
         <input className="form" type="text" name="city" placeholder="ex: London" value={inputValue} onChange={handleChange} />
       </form>
     </div>
