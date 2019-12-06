@@ -18,8 +18,15 @@ const SearchBar = (props) => {
   return (
     <div className="search">
       <p>Enter a city of your choice</p>
-      <form onSubmit={loadStats} >
-        <input className="form" type="text" name="city" placeholder="ex: London" value={inputValue} onChange={handleChange} />
+      <form onSubmit={loadStats}>
+        <input
+          className="text-input"
+          type="text"
+          name="city"
+          placeholder="ex: London"
+          value={inputValue}
+          onChange={handleChange}
+        />
       </form>
     </div>
   );
@@ -30,6 +37,7 @@ SearchBar.propTypes = {
   loadStats: PropTypes.func.isRequired,
   inputValue: PropTypes.string.isRequired,
 };
+
 
 
 export default SearchBar;

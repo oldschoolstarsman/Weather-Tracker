@@ -21,7 +21,7 @@ class App extends React.Component {
     humidity: null,
     error: false,
     isLoading: false,
-    inputValue: 'London',
+    inputValue: '',
   }
 
   componentDidMount() {
@@ -43,14 +43,11 @@ class App extends React.Component {
   /* Show the mean value from the recorded tracker values */
   showMean = (...numbers) => numbers.reduce((acc, val) => acc + val, 0) / numbers.length;
 
-  /* Show the mode value from the recorded tracker values */
-  showMode = (f) => (f - 32) / 1.8;
 
-
-  /* FECTH data from API on page load*/
+  /* FECTH data from API on page load show London data as default*/
   fetchCurrentWeather = () => {
     const { inputValue } = this.state;
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&units=metric&appid=${APIkey}`)
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=${APIkey}`)
       .then((response) => {
         console.log('retour API WEATHER', response);
 
