@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 import './form.scss';
 
@@ -21,5 +23,12 @@ const SearchBar = (props) => {
     </div>
   );
 };
+
+SearchBar.propTypes = {
+  changeValue: PropTypes.func.isRequired,
+  loadStats: PropTypes.func.isRequired,
+  inputValue: PropTypes.string.isRequired,
+};
+
 
 export default SearchBar;

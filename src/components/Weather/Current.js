@@ -1,22 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './current.scss';
 
-const Current = (props) => {
-  console.log('Current Component:', props);
-
-  return (
-    <div className="">
-      <div className="display__city">{props.city}</div>
-      <div className="display__temperature">{props.tempCurrent}&deg;</div>
-      <div className="display__weather">
-        {props.weatherNow}
-        <i className="wi wi-day-sunny" />
-      </div>
+const Current = ({ city, tempCurrent, weatherNow }) => (
+  <>
+    <div className="display__city">{city}</div>
+    <div className="display__temperature">{tempCurrent}&deg;</div>
+    <div className="display__weather">
+      {weatherNow}
+      <i className="wi wi-day-sunny" />
     </div>
-  );
-};
+  </>
+);
 
 Current.propTypes = {
   city: PropTypes.string.isRequired,
@@ -25,5 +20,3 @@ Current.propTypes = {
 };
 
 export default Current;
-
-

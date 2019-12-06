@@ -1,16 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Humidity = ( props ) => {
-  console.log(props.humidity)
-  return (
-    <div className="">
-      Humidity: {props.humidity}
-    </div>
-  )
-}
+
+const Humidity = (props) => (
+  <div>Humidity: {props.humidity}</div>
+);
 
 Humidity.propTypes = {
-  // tempCurrent: PropTypes.number.isRequired,
+  humidity: PropTypes.number.isRequired,
 };
 
 export default Humidity;

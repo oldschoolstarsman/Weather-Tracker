@@ -1,13 +1,14 @@
+// == Import : npm
 import React from 'react';
 
-// local import
-import Day from './Day';
-import Night from './Night';
-import Morning from './Morning';
+// == Import : local
+import Min from './Min';
+import Max from './Max';
 import Humidity from './Humidity';
 import Current from './Current';
 
 import './weather.scss';
+
 
 const Weather = (props) => {
   // console.log('Weather:', weatherNow);
@@ -19,9 +20,8 @@ const Weather = (props) => {
         />
       </div>
       <div className="statistics">
-        <Day />
-        <Night tempMax={props.tempMax} />
-        <Morning tempMin={props.tempMin} />
+        <Min tempMin={props.tempMin} />
+        <Max tempMax={props.tempMax} />
         <Humidity humidity={props.humidity} />
       </div>
     </div>

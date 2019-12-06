@@ -8,10 +8,37 @@
 .statistics {
   width: 50%;
   padding: 2em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
 }
 
+.current__weather {
+  background-color: #10263b;
+  color: #fff;
 
+  & .display__city {
+    font-size: 3.25rem;
+    margin-bottom: 3rem;
+  }
+
+  & .display__temperature {
+    font-size: 7rem;
+    font-family: "Abril Fatface", cursive;
+    margin-bottom: 2rem;
+  }
+
+  & .display__weather {
+    & .wi {
+      width: 3rem;
+      color: white;
+    }
+  }
+}
 
 .statistics {
   background-color: whitesmoke;
+  font-size: 1.7rem;
 }

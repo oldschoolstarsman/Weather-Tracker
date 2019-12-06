@@ -1,5 +1,3 @@
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable react/prefer-stateless-function */
 // == Import : npm
 import React from 'react';
 import axios from 'axios';
@@ -26,17 +24,9 @@ class App extends React.Component {
     inputValue: 'London',
   }
 
-  // componentDidMount() {
-  //   axios.get('http://api.openweathermap.org/data/2.5/forecast?q=London&cnt=5&appid=1f9774d5d727bce8ea5d98a3fbde5c26')
-  //     .then((res) => console.log(res));
-  // }
   componentDidMount() {
     this.fetchCurrentWeather();
   }
-
-  // componentDidUpdate() {
-  //   // console.log('CDU', this.state);
-  // }
 
   changeValue = (name, newValue) => {
     this.setState({
@@ -56,12 +46,8 @@ class App extends React.Component {
   /* Show the mode value from the recorded tracker values */
   showMode = (f) => (f - 32) / 1.8;
 
-  showTest = () => 'units=metric';
-  // console.log(this.showTest);
 
-
-
-  /* FECTH data from API */
+  /* FECTH data from API on page load*/
   fetchCurrentWeather = () => {
     const { inputValue } = this.state;
     axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&units=metric&appid=${APIkey}`)
@@ -86,7 +72,7 @@ class App extends React.Component {
       });
   }
 
-
+  /* FECTH data from API on form submit */
   fetchStats = (e) => {
     e.preventDefault();
     console.log('toto a clicke')
@@ -95,7 +81,6 @@ class App extends React.Component {
       .then((response) => {
         // console.log('retour API SUBMIT', response.data);
         this.setState({
-          // city: response.data.city.name,
           city: response.data.name,
           tempMin: Math.round(response.data.main.temp_min),
           tempMax: Math.round(response.data.main.temp_max),
@@ -146,7 +131,6 @@ class App extends React.Component {
   }
 }
 
-// == Export
 export default App;
 
 
