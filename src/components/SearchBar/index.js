@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import './form.scss';
 
 const SearchBar = (props) => {
-  // console.log('FORM', props);
 
   const handleChange = (event) => {
     const { changeValue } = props;
@@ -37,7 +36,5 @@ SearchBar.propTypes = {
   loadStats: PropTypes.func.isRequired,
   inputValue: PropTypes.string.isRequired,
 };
-
-
 
 export default SearchBar;

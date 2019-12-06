@@ -11,7 +11,6 @@ import './weather.scss';
 
 
 const Weather = (props) => {
-  // console.log('Weather:', weatherNow);
   return (
     <div className="wrapper">
       <div className="current__weather">

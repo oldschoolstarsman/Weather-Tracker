@@ -2,6 +2,7 @@
   display: flex;
   height: 70vh;
   opacity: 0.8;
+  box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.2);
 }
 
 .current__weather,
@@ -21,13 +22,14 @@
 
   & .display__city {
     font-size: 3.25rem;
-    margin-bottom: 3rem;
+    margin-bottom: .2em;
   }
 
   & .display__temperature {
     font-size: 7rem;
     font-family: "Abril Fatface", cursive;
     margin-bottom: 2rem;
+    animation: grow 0.4s cubic-bezier(0.36, 1.59, 0.89, 1.1);
   }
 
   & .display__weather {
@@ -41,4 +43,13 @@
 .statistics {
   background-color: whitesmoke;
   font-size: 1.7rem;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

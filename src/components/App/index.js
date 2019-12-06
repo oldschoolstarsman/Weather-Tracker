@@ -7,7 +7,6 @@ import Weather from 'src/components/Weather';
 import SearchBar from 'src/components/SearchBar';
 
 import './app.scss';
-// import 'weather-icons/css/weather-icons.css';
 
 const APIkey = '1f9774d5d727bce8ea5d98a3fbde5c26';
 
@@ -49,7 +48,6 @@ class App extends React.Component {
     const { inputValue } = this.state;
     axios.get(`http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=${APIkey}`)
       .then((response) => {
-        console.log('retour API WEATHER', response);
 
         this.setState({
           city: response.data.name,
@@ -71,12 +69,14 @@ class App extends React.Component {
 
   /* FECTH data from API on form submit */
   fetchStats = (e) => {
+
     e.preventDefault();
-    console.log('toto a clicke')
+
     const { inputValue } = this.state;
+
     axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&units=metric&appid=${APIkey}`)
       .then((response) => {
-        // console.log('retour API SUBMIT', response.data);
+
         this.setState({
           city: response.data.name,
           tempMin: Math.round(response.data.main.temp_min),
@@ -86,23 +86,20 @@ class App extends React.Component {
           humidity: response.data.main.humidity,
           isLoading: false,
         });
+      }).catch((error) => {
+        this.setState({
+          error: true,
+          errorMessage: error.message,
+        });
       });
   }
 
 
   render() {
-    console.log('STATE', this.state);
 
     const {
       city, tempMin, tempCurrent, tempMax, humidity, error, weatherNow, isLoading, inputValue,
     } = this.state;
-
-    console.log('tempMinState', tempMin);
-    console.log('tempMaxState', tempMax);
-    console.log('tempCurrentState', tempCurrent);
-    console.log('humidityState', humidity);
-    console.log('weatherNowState', weatherNow);
-
 
     return (
       <div id="app" className="container">
@@ -134,26 +131,3 @@ export default App;
 
 
 
-
-
-
-
-    // axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${this.state.inputValue}&cnt=5&appid=${APIkey}`)
-    //   .then((response) => {
-    //     console.log('TEMP_ARRAY', response.data.list.main.temp.map((temp) => temp));
-    //   });
-
-    //   axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=London&cnt=5&appid=${APIkey}`)
-    //     .then((response) => {
-    //       // console.log('retour API FORECAST', response.data);
-    //       // this.setState({
-    //       //   city: response.data.name,
-    //       //   // tempMin: response.data.main.temp_min,
-    //       //   // tempMax: response.data.main.temp_max,
-    //       //   temp_current: response.data.main.temp,
-    //       //   weatherNow: response.data.weather[0].description,
-    //       //   humidity: response.data.main.humidity,
-    //       //   isLoading: false,
-    //       // });
-    //     });
-    // }
